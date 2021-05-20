@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.13
+FROM lsiobase/nginx:3.10
 
 # set version label
 LABEL build_version="master"
