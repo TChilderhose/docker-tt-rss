@@ -1,11 +1,8 @@
-FROM lsiobase/nginx:3.10
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.13
 
 # set version label
-ARG BUILD_DATE
-ARG VERSION
-ARG TT_RSS_VERSION
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="sparklyballs"
+LABEL build_version="master"
+LABEL maintainer="tchilderhose"
 
 RUN \
  echo "**** install packages ****" && \
@@ -28,13 +25,16 @@ RUN \
 	php7-pdo_pgsql \
 	php7-pgsql \
 	php7-posix \
-	tzdata \
 	tar && \
  echo "**** link php7 to php ****" && \
  ln -sf /usr/bin/php7 /usr/bin/php && \
  echo "**** cleanup ****" && \
  rm -rf \
 	/tmp/*
+	
+RUN \
+ echo "**** configure php ****" && \
+ sed -i 's/^;clear_env/clear_env/i' /etc/php7/php-fpm.d/www.conf
 
 # copy local files
 COPY root/ /
