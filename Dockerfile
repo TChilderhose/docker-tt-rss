@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM lsiobase/nginx:3.10
 
 # set version label
 ARG BUILD_DATE
