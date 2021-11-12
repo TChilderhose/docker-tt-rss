@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+echo "Pulling latest";
+cd /var/www/html && git pull    
+echo "Pulling Done";
