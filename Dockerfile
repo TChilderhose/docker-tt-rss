@@ -1,4 +1,4 @@
-FROM lsiobase/nginx:3.14
+FROM lsiobase/nginx:3.10
 
 # set version label
 LABEL build_version="master"
