@@ -70,3 +70,7 @@ fi
 chown -R abc:abc \
 	/config \
 	/var/www/html/
+
+echo "Pulling latest";
+cd /var/www/html && git pull    
+echo "Pulling Done";

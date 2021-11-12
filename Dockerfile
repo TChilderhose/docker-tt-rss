@@ -1,4 +1,4 @@
-FROM lsiobase/nginx:3.10
+FROM lsiobase/nginx:3.14
 
 # set version label
 LABEL build_version="master"
@@ -31,6 +31,8 @@ RUN \
  echo "**** cleanup ****" && \
  rm -rf \
 	/tmp/*
+
+RUN git clone https://git.tt-rss.org/fox/tt-rss.git /var/www/html
 
 # copy local files
 COPY root/ /
