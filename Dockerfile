@@ -1,4 +1,4 @@
-FROM lsiobase/nginx:3.15
+FROM lsiobase/nginx:3.14
 
 # set version label
 LABEL build_version="master"
@@ -39,5 +39,5 @@ RUN git clone https://git.tt-rss.org/fox/tt-rss.git /var/www/html
 COPY root/ /
 
 # ports and volumes
-EXPOSE 80 443
+EXPOSE 80
 VOLUME /config
