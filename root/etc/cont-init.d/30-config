@@ -1,9 +1,5 @@
 #!/usr/bin/with-contenv bash
 
-# if this is a legacy container do not run any logic
-[[ -d /config/www/tt-rss ]] && \
-	exit 0
-
 # create symlinks
 symlinks=( \
 /var/www/html/config.php \
