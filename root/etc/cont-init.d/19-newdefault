@@ -2,7 +2,7 @@
 
 # if this is a clean container use the new nginx root
 [[ ! -d /config/www/tt-rss ]] && \
-	mv /defaults/default.incontainer /defaults/default && \
+	mv /defaults/default.conf /tt-rss/nginx/site-confs/default.conf && \
 	exit 0
 
 # permissions on legacy container install
