@@ -10,22 +10,27 @@ RUN \
 	curl \
 	git \
 	grep \
-	php7-apcu \
-	php7-curl \
-	php7-dom \
-	php7-gd \
-	php7-iconv \
-	php7-intl \
-	php7-ldap \
-	php7-mcrypt \
-	php7-mysqli \
-	php7-mysqlnd \
-	php7-pcntl \
-	php7-pdo \
-	php7-pdo_mysql \
-	php7-pdo_pgsql \
-	php7-pgsql \
-	php7-posix \
+	php8 \
+	php8-ctype \
+	php8-curl \
+	php8-dom \
+	php8-fileinfo \
+	php8-fpm \
+	php8-gd \
+	php8-iconv \
+	php8-intl \
+	php8-mbstring \
+	php8-mysqlnd \
+	php8-opcache \
+	php8-openssl \
+	php8-pcntl \
+	php8-pdo_mysql \
+	php8-pdo_pgsql \
+	php8-pgsql \
+	php8-posix \
+	php8-session \
+	php8-tokenizer \
+	php8-xsl \
 	tar && \
  echo "**** link php7 to php ****" && \
  ln -sf /usr/bin/php7 /usr/bin/php && \
