@@ -32,8 +32,8 @@ RUN \
 	php8-tokenizer \
 	php8-xsl \
 	tar && \
- echo "**** link php7 to php ****" && \
- ln -sf /usr/bin/php7 /usr/bin/php && \
+ echo "**** link php8 to php ****" && \
+ ln -sf /usr/bin/php8 /usr/bin/php && \
  echo "**** cleanup ****" && \
  rm -rf \
 	/tmp/*
