@@ -1,11 +1,11 @@
-FROM lsiobase/nginx:3.15
+FROM lsiobase/nginx:3.15-php8
 
 # set version label
 LABEL build_version="master"
 LABEL maintainer="tchilderhose"
 
 RUN \
- echo "**** install packages ****" && \
+ echo "**** Install Packages ****" && \
  apk add --no-cache --upgrade \
 	curl \
 	git \
@@ -33,9 +33,9 @@ RUN \
 	php8-tokenizer \
 	php8-xsl \
 	tar && \
- echo "**** link php8 to php ****" && \
+ echo "**** Link php8 to php ****" && \
  ln -sf /usr/bin/php8 /usr/bin/php && \
- echo "**** cleanup ****" && \
+ echo "**** Cleanup ****" && \
  rm -rf \
 	/tmp/*
 
