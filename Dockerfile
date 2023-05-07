@@ -1,4 +1,4 @@
-FROM lsiobase/nginx:3.14
+FROM lsiobase/nginx:3.15
 
 # set version label
 LABEL build_version="master"
@@ -24,6 +24,7 @@ RUN \
 	php8-opcache \
 	php8-openssl \
 	php8-pcntl \
+	php8-pdo \
 	php8-pdo_mysql \
 	php8-pdo_pgsql \
 	php8-pgsql \

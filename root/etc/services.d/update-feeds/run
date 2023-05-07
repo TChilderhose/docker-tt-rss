@@ -1,5 +1,5 @@
 #!/usr/bin/with-contenv bash
 
 [[ -d /var/www/html ]] && \
-        s6-setuidgid abc php7 \
+        s6-setuidgid abc php \
         /var/www/html/update_daemon2.php > /dev/null 2>&1
