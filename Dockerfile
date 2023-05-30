@@ -1,4 +1,4 @@
-FROM lsiobase/nginx:3.15-php8
+FROM lsiobase/nginx:3.18
 
 # set version label
 LABEL build_version="master"
@@ -10,31 +10,41 @@ RUN \
 	curl \
 	git \
 	grep \
-	php8 \
-	php8-ctype \
-	php8-curl \
-	php8-dom \
-	php8-fileinfo \
-	php8-fpm \
-	php8-gd \
-	php8-iconv \
-	php8-intl \
-	php8-mbstring \
-	php8-mysqlnd \
-	php8-opcache \
-	php8-openssl \
-	php8-pcntl \
-	php8-pdo \
-	php8-pdo_mysql \
-	php8-pdo_pgsql \
-	php8-pgsql \
-	php8-posix \
-	php8-session \
-	php8-tokenizer \
-	php8-xsl \
+	php82 \
+	php82-ctype \
+	php82-curl \
+	php82-dom \
+	php82-exif \
+	php82-fileinfo \
+	php82-fpm \
+	php82-gd \
+	php82-iconv \
+	php82-intl \
+	php82-json \
+	php82-mbstring \
+	php82-mysqlnd \
+	php82-opcache \
+	php82-openssl \
+	php82-pcntl \
+	php82-pdo \
+	php82-pdo_mysql \
+	php82-pdo_pgsql \
+	php82-pecl-apcu \
+	php82-pecl-xdebug \
+	php82-pgsql \
+	php82-phar \
+	php82-posix \
+	php82-session \
+	php82-simplexml \
+	php82-sockets \
+	php82-tokenizer \
+	php82-xml \
+	php82-xmlwriter \
+	php82-xsl \
+	php82-zip \	
 	tar && \
  echo "**** Link php8 to php ****" && \
- ln -sf /usr/bin/php8 /usr/bin/php && \
+ ln -sf /usr/bin/php82 /usr/bin/php && \
  echo "**** Cleanup ****" && \
  rm -rf \
 	/tmp/*
