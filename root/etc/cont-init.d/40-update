@@ -2,4 +2,10 @@
 
 echo "Pulling latest";
 git -C /app/www/public pull
+
+export CI_COMMIT_BRANCH=$(git -C /app/www/public rev-parse --abbrev-ref HEAD)
+export CI_COMMIT_SHA=$(git -C /app/www/public rev-parse HEAD)
+export CI_COMMIT_SHORT_SHA=$(git -C /app/www/public rev-parse --short HEAD)
+export CI_COMMIT_TIMESTAMP=$(git log -1 --format="%at" | xargs -I{} date -d @{} +%Y/%m/%d_%H:%M:%S)
+
 echo "Pulling Done";
