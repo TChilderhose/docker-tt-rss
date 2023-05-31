@@ -1,3 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-mv /defaults/default.conf /config/nginx/site-confs/default.conf
