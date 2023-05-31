@@ -11,7 +11,6 @@ RUN apk add --no-cache --upgrade \
 	php82-session php82-tokenizer php82-dom php82-fileinfo php82-ctype \
 	php82-json php82-iconv php82-pcntl php82-posix php82-zip php82-exif \
 	php82-openssl git postgresql-client sudo php82-pecl-xdebug rsync tzdata && \
- sed -i 's/\(memory_limit =\) 128M/\1 256M/' /etc/php82/php.ini && \
  ln -sf /usr/bin/php82 /usr/bin/php && \
  rm -rf /tmp/*
 
@@ -20,6 +19,3 @@ RUN git clone https://git.tt-rss.org/fox/tt-rss.git /app/www/public
 COPY root/ /
 
 VOLUME /config
-
-ENV PHP_WORKER_MAX_CHILDREN=5
-ENV PHP_WORKER_MEMORY_LIMIT=256M
