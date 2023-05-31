@@ -2,12 +2,12 @@
 
 # create symlinks
 symlinks=( \
-/var/www/html/config.php \
-/var/www/html/themes.local \
-/var/www/html/plugins.local \
-/var/www/html/cache \
-/var/www/html/lock \
-/var/www/html/feed-icons
+/app/www/public/config.php \
+/app/www/public/themes.local \
+/app/www/public/plugins.local \
+/app/www/public/cache \
+/app/www/public/lock \
+/app/www/public/feed-icons
 )
 
 for i in "${symlinks[@]}"; do
@@ -26,8 +26,8 @@ if [ "${DB_TYPE+x}" ]; then
 	echo "DB_TYPE set, injecting env variables into config.php"
 	if [ ! -f /config/config.php ]; then
 		echo "Creating config.php from the dist file"
-		cp /var/www/html/config.php-dist /config/config.php
-		ln -s /config/config.php /var/www/html/config.php
+		cp /app/www/public/config.php-dist /config/config.php
+		ln -s /config/config.php /app/www/public/config.php
 	fi
 	[[ "${DB_TYPE+x}" ]] && sed -i "s|\s*define('DB_TYPE',.*|\tdefine('DB_TYPE', '$DB_TYPE');|g" /config/config.php
 	[[ "${DB_HOST+x}" ]] && sed -i "s|\s*define('DB_HOST',.*|\tdefine('DB_HOST', '$DB_HOST');|g" /config/config.php
@@ -65,4 +65,4 @@ fi
 # permissions
 chown -R abc:abc \
 	/config \
-	/var/www/html/
+	/app/www/public/
