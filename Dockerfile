@@ -22,6 +22,11 @@ RUN \
  echo "**** Cleanup ****" && \
  rm -rf /tmp/* $HOME/.cache
 
+ENV CI_COMMIT_BRANCH=$(git -C /app/www/public rev-parse --abbrev-ref HEAD)
+ENV CI_COMMIT_SHA=$(git -C /app/www/public rev-parse HEAD)
+ENV CI_COMMIT_SHORT_SHA=$(git -C /app/www/public rev-parse --short HEAD)
+ENV CI_COMMIT_TIMESTAMP=$(git -C /app/www/public log -1 --format="%at" | xargs -I{} date -d @{} +%FT%T)
+
 ENV PHP_WORKER_MAX_CHILDREN=5
 ENV PHP_WORKER_MEMORY_LIMIT=256M
 
