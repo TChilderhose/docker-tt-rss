@@ -1,6 +1,5 @@
 #!/usr/bin/with-contenv bash
 
 echo "Pulling latest";
-git config --global --add safe.directory /app/www/public
 git -C /app/www/public pull
 echo "Pulling Done";
