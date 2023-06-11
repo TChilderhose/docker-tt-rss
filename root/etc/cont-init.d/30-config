@@ -63,6 +63,5 @@ if [ "${DB_TYPE+x}" ]; then
 fi
 
 # permissions
-chown -R abc:abc \
-	/config \
-	/app/www/public
+chown -R abc:abc /config 
+chown -R abc:abc /app/www/public

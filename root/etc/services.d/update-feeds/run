@@ -1,5 +1,3 @@
 #!/usr/bin/with-contenv bash
 
-[[ -d /app/www/public ]] && \
-        s6-setuidgid abc php \
-        /app/www/public/update_daemon2.php > /dev/null 2>&1
+sudo -E -u abc /app/www/public/update_daemon2.php > /dev/null 2>&1

@@ -3,6 +3,4 @@
 echo "Pulling latest";
 git -C /app/www/public pull
 
-echo $(git -C /app/www/public rev-parse --short HEAD) > /app/www/public/version_static.txt
-
 echo "Pulling Done";
