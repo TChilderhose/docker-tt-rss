@@ -6,17 +6,17 @@ LABEL maintainer="tchilderhose"
 RUN \
   echo "**** Install Packages ****" && \
   apk add --no-cache --upgrade \
-	php82 php82-fpm php82-phar php82-sockets php82-pecl-apcu \
-	php82-pdo php82-gd php82-pgsql php82-pdo_pgsql php82-xmlwriter php82-opcache \
-	php82-mbstring php82-intl php82-xml php82-curl php82-simplexml \
-	php82-session php82-tokenizer php82-dom php82-fileinfo php82-ctype \
-	php82-json php82-iconv php82-pcntl php82-posix php82-zip php82-exif \
-	php82-openssl git postgresql-client sudo php82-pecl-xdebug rsync tzdata && \ 
+	php83 php83-fpm php83-phar php83-sockets php83-pecl-apcu \
+	php83-pdo php83-gd php83-pgsql php83-pdo_pgsql php83-xmlwriter php83-opcache \
+	php83-mbstring php83-intl php83-xml php83-curl php83-simplexml \
+	php83-session php83-tokenizer php83-dom php83-fileinfo php83-ctype \
+	php83-json php83-iconv php83-pcntl php83-posix php83-zip php83-exif \
+	php83-openssl git postgresql-client sudo php83-pecl-xdebug rsync tzdata && \ 
 	echo "**** Link PHP ****" && \
- 	ln -sf /usr/bin/php82 /usr/bin/php && \ 
+ 	ln -sf /usr/bin/php83 /usr/bin/php && \ 
  	echo "**** PHP Tweaks ****" && \
- 	sed -i "s/^\(memory_limit\) = \(.*\)/\1 = 256M/" /etc/php82/php.ini && \
- 	sed -i "s/^\(pm.max_children\) = \(.*\)/\1 = 5/" /etc/php82/php.ini && \ 
+ 	sed -i "s/^\(memory_limit\) = \(.*\)/\1 = 256M/" /etc/php83/php.ini && \
+ 	sed -i "s/^\(pm.max_children\) = \(.*\)/\1 = 5/" /etc/php83/php.ini && \ 
 	echo "**** Clone tt-rss Repo ****" && \
 	git config --global --add safe.directory /app/www/public && \
 	git clone https://git.tt-rss.org/fox/tt-rss.git /app/www/public && \ 
@@ -29,6 +29,7 @@ ENV PGID=1000
 # copy local files
 COPY root/ /
 RUN chmod +x /etc/cont-init.d/*
+RUN chmod +x /etc/services.d/update-feeds/*
 
 # ports and volumes
 EXPOSE 80
