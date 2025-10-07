@@ -33,8 +33,8 @@ ENV PHP_WORKER_MEMORY_LIMIT=256M
 
 # copy local files
 COPY root/ /
-RUN chmod +x /etc/cont-init.d/*
-RUN chmod +x /etc/services.d/update-feeds/*
+RUN chmod +x /custom-cont-init.d/*
+RUN chmod +x /custom-services.d/update-feeds/*
 
 # ports and volumes
 EXPOSE 80
