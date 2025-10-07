@@ -1,6 +1,7 @@
 #!/usr/bin/with-contenv bash
 
-echo "Pulling latest";
-git -C /app/www/public pull
+update-ca-certificates || true
 
-echo "Pulling Done";
+echo "Pulling latest"
+git -C /app/www/public pull
+echo "Pulling Done"
