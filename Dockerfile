@@ -20,6 +20,7 @@ RUN \
  	sed -i "s/^\(memory_limit\) = \(.*\)/\1 = 256M/" /etc/php${PHP_SUFFIX}/php.ini && \
  	sed -i "s/^\(pm.max_children\) = \(.*\)/\1 = 5/" /etc/php${PHP_SUFFIX}/php.ini && \ 
 	echo "**** Clone tt-rss Repo ****" && \
+	git config --global --add safe.directory /app/www/public && \
 	git clone https://github.com/tt-rss/tt-rss.git /app/www/public && \ 
 	echo "**** Cleanup ****" && \
 	rm -rf /tmp/* $HOME/.cache
